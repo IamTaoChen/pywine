@@ -35,4 +35,7 @@ RUN umask 0 && xvfb-run sh -c "\
   wine pip install --no-warn-script-location pyinstaller; \
   wineserver -w"
 
+ADD install_git.sh /
+RUN bash /install_git.sh
+
 ENTRYPOINT ["/opt/entrypoint.sh"]
